@@ -10,8 +10,7 @@
                 { "label": "SMS", "value": 0 },
                 { "label": "Combi-SMS", "value": 1 },
                 { "label": "MMS", "value": 2 }
-            ] 
-        }
+        ]
     ],
     "actions":
     [
