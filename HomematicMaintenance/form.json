@@ -1,9 +1,8 @@
 {
     "elements":
     [
-        { "type": "Checkbox", "name": "RSSI", "caption": "RSSI auslesen" },
-        { "type": "Checkbox", "name": "servicemsg", "caption": "Servicmeldungen auslesen" },
-
+        { "name": "RSSI",           "type": "CheckBox", "caption": "RSSI auslesen" },
+        { "name": "servicemsg",     "type": "CheckBox", "caption": "Servicmeldungen auslesen" },
         { "type": "ValidationTextBox", "name": "HM_TIMEOUT_REFRESH", "caption": "Refresh Timeout" }
     ]
 }
