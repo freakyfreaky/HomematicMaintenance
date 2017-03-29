@@ -1,0 +1,14 @@
+{
+    "id": "{EDC644E0-4D89-4A80-A0E1-CDA10CAC4394}",
+    "name": "HomematicMaintenance",
+    "type": 3,
+    "vendor": "Andreas Birk",
+    "aliases": 
+    [
+        "Homematic Maintenance"
+    ],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "HMM"
+}
