@@ -15,6 +15,12 @@
         public function Create() {
             // Diese Zeile nicht löschen.
             parent::Create();
+
+            // Variables
+           $this->RegisterPropertyInteger("HM_TIMEOUT_REFRESH", 10);
+           $this->RegisterPropertyBoolean("servicemsgs", true);
+           $this->RegisterPropertyBoolean("RSSI", true);
+ 
  
         }
  
@@ -57,6 +63,17 @@
         public function MeineErsteEigeneFunktion() {
             // Selbsterstellter Code
             echo $this->InstanceID;
+
+            if(IPS_GetProperty($this->InstanceID, "HM_TIMEOUT_REFRESH")){
+                echo "Timeout";
+                }
+            if (IPS_GetProperty($this->InstanceID, "RSSI")){
+                echo "RSSI";
+                }
+            if (IPS_GetProperty($this->InstanceID, "servicemsgs")) {
+                echo "servicemsgs";
+                }
+
         }
 
 
