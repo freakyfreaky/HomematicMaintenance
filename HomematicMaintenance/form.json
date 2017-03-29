@@ -1,6 +1,9 @@
 {
     "elements":
     [
-        { "type": "ValidationTextBox", "name": "APLUS_ICS", "caption": "ICS Inhalt:" }
+        { "type": "Checkbox", "name": "RSSI", "caption": "RSSI auslesen" }
+        { "type": "Checkbox", "name": "servicemsg", "caption": "Servicmeldungen auslesen" }
+
+        { "type": "ValidationTextBox", "name": "HM_TIMEOUT_REFRESH", "caption": "Refresh Timeout" }
     ]
 }
