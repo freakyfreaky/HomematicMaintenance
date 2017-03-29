@@ -22,6 +22,29 @@
         public function ApplyChanges() {
             // Diese Zeile nicht löschen
             parent::ApplyChanges();
+
+            // Refresh Script
+            $refreshScriptID = @$this->GetIDForIdent("update");
+            if($refreshScriptID === false) {
+                $refreshScriptID = $this->RegisterScript("update", "Update", file_get_contents(__DIR__ . "/update.php"), 100);
+            } 
+            else {
+            IPS_SetScriptContent($refreshScriptID, file_get_contents(__DIR__ . "/update.php"));
+            }
+            IPS_SetHidden($refreshScriptID, true);
+
+            // Refresh Ereignis
+            $refreshEvent = @IPS_GetEventIDByName("Ereignis", $refreshScriptID);
+            if(!$refreshEvent) {
+                $refreshEvent = IPS_CreateEvent(1);
+                IPS_SetParent($refreshEvent, $refreshScriptID);
+                IPS_SetName($refreshEvent, "Ereignis");
+                IPS_SetEventCyclicTimeFrom($refreshEvent, 0, 1, 0);
+                IPS_SetEventActive($refreshEvent, true);
+            }
+
+
+
         }
  
         /**
@@ -33,6 +56,13 @@
         */
         public function MeineErsteEigeneFunktion() {
             // Selbsterstellter Code
+            echo $this->InstanceID;
         }
+
+
+        // PUBLIC ACCESSIBLE FUNCTIONS
+        public function Update() {
+            $this->MeineErsteEigeneFunktion();
+    }
     }
 ?>
